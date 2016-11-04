@@ -2,7 +2,7 @@ package main
 
 import "github.com/fluent/fluent-bit-go/output"
 import "fmt"
-
+import "C"
 
 //export my_test
 func my_test() *flbout.FLBPlugin {

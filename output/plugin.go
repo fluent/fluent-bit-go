@@ -2,7 +2,6 @@ package flbout
 
 /* #include "../c/flbgo_plugin.h" */
 import "C"
-
 import "unsafe"
 
 /* Define constants matching Fluent Bit core */
