@@ -24,11 +24,11 @@
 #define FLB_PROXY_GOLANG          11
 
 struct flb_plugin_proxy {
-    int Type;
-    int Proxy;
-    int Flags;
-    char *Name;
-    char *Description;
+    int type;
+    int proxy;
+    int flags;
+    char *name;
+    char *description;
 };
 
 #endif
