@@ -20,6 +20,12 @@
 #ifndef FLBGO_PLUGIN_H
 #define FLBGO_PLUGIN_H
 
+/* Return values */
+#define FLB_ERROR   0
+#define FLB_OK      1
+#define FLB_RETRY   2
+
+/* Proxy definition */
 #define FLB_PROXY_OUTPUT_PLUGIN    2
 #define FLB_PROXY_GOLANG          11
 

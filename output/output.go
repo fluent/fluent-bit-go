@@ -26,6 +26,10 @@ import "fmt"
 import "unsafe"
 
 // Define constants matching Fluent Bit core
+const FLB_ERROR               =  C.FLB_ERROR
+const FLB_OK                  =  C.FLB_OK
+const FLB_RETRY               =  C.FLB_RETRY
+
 const FLB_PROXY_OUTPUT_PLUGIN =  C.FLB_PROXY_OUTPUT_PLUGIN
 const FLB_PROXY_GOLANG        =  C.FLB_PROXY_GOLANG
 
