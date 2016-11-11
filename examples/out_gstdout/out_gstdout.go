@@ -34,7 +34,12 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 		count++
 	}
 
-	return 0
+	// Return options:
+	//
+	// output.FLB_OK    = data have been processed.
+	// output.FLB_ERROR = unrecoverable error, do not try this again.
+	// output.FLB_RETRY = retry to flush later.
+	return output.FLB_OK
 }
 
 //export FLBPluginExit
