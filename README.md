@@ -30,4 +30,4 @@ Feel free to join us on our Slack channel, Mailing List, IRC or Twitter:
 ## Authors
 
 [Fluent Bit Go](http://fluentbit.io) is made and sponsored by [Treasure Data](http://treasuredata.com) among
-other [contributors](https://github.com/fluent/fluent-bit/graphs/contributors).
+other [contributors](https://github.com/fluent/fluent-bit-go/graphs/contributors).
