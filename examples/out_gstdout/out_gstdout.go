@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"unsafe"
 	"C"
+	"reflect"
 )
 
 //export FLBPluginInit
@@ -24,13 +25,27 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 	b = C.GoBytes(data, length)
 	dec := codec.NewDecoderBytes(b, h)
 
+	// Iterate the original MessagePack array
 	count = 0
 	for {
+		// Decode the entry
 		err = dec.Decode(&m)
 		if err != nil {
 			break
 		}
-		fmt.Printf("[%d] %s: %v\n", count, C.GoString(tag), m)
+
+		// Get a slice and their two entries: timestamp and map
+		slice := reflect.ValueOf(m)
+		timestamp := slice.Index(0)
+		data := slice.Index(1)
+
+		// Convert slice data to a real map and iterate
+		map_data := data.Interface().(map[interface{}] interface{})
+		fmt.Printf("[%d] %s: [%d, {", count, C.GoString(tag), timestamp)
+		for k, v := range map_data {
+			fmt.Printf("\"%s\": %v, ", k, v)
+		}
+		fmt.Printf("}\n")
 		count++
 	}
 
