@@ -12,10 +12,9 @@ import (
   // "strings"
   "github.com/ugorji/go/codec"
   // // "time"
-  "encoding/json"
-) 
-
-// https://github.com/Shopify/sarama
+  // "encoding/json"
+  "io"
+)
 
 //export FLBPluginInit
 func FLBPluginInit(ctx unsafe.Pointer) int {
@@ -46,38 +45,58 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
     slice := reflect.ValueOf(m)
     timestamp := slice.Index(0)
     data := slice.Index(1)
+    brokerList := []string{"localhost:9092"}
+    // var message string
 
     // Convert slice map to a real map and iterate
     map_data := data.Interface().(map[interface{}] interface{})
 
 
+    fmt.Printf("timestamp=%d\n", timestamp)
+    fmt.Printf("count: %d", count)
+    // time := fmt.Sprintf("%d", timestamp)
+
+    for k, v := range map_data {
+      fmt.Printf("     key[%s] value[%v]\n", k, v)
+      // message = fmt.Sprintf("%v", v)
+    }
+
+    // establish struct for logs
     type Log struct {
       Timestamp string
       Log string
     }
 
-    fmt.Printf("timestamp=%d\n", timestamp)
-    time := fmt.Sprintf("%d", timestamp)
-    var message string
 
-    for k, v := range map_data {
-      fmt.Printf("     key[%s] value[%v]\n", k, v)
-      message = fmt.Sprintf("%v", v)
-    }
-    count++
+    // msgpack
+    var (
+      w io.Writer
+      b []byte
+      mh codec.MsgpackHandle
+    )
 
-    log := Log{
-      Timestamp: time,
-      Log: message,
-    }
-    // Marshal(m)
-    enc, err := json.Marshal(log)
-    if err == nil {
-      fmt.Println("error with MARSHAL:", err)
-    }
 
-    brokerList := []string{"localhost:9092"}
+    enc := codec.NewEncoder(w, &mh)
+    enc = codec.NewEncoderBytes(&b, &mh)
+    err = enc.Encode(&m)
+    // fmt.Printf("MESSSSAGEPACK: %v", b)
 
+
+
+    // JSON
+    // log := Log{
+    //   Timestamp: time,
+    //   Log: message,
+    // }
+    // // convert struct to json
+    // enc, err := json.Marshal(log)
+    // if err == nil {
+    //   fmt.Println("error with MARSHAL:", err)
+    // }
+
+
+
+    // send message to kafka
     var er error
     config := sarama.NewConfig()
     producer, er := sarama.NewSyncProducer(brokerList, config)
@@ -88,9 +107,12 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
     producer.SendMessage(&sarama.ProducerMessage {
       Topic: "test",
       Key:   nil,
-      Value: sarama.ByteEncoder(enc),
+      Value: sarama.ByteEncoder(b),
+      // Value: sarama.ByteEncoder(encoded_log_bytes),
       // Value: sarama.StringEncoder(time),
     })
+
+    count++
     producer.Close()
   }
 
