@@ -1,19 +1,15 @@
 package main
 
 import "github.com/fluent/fluent-bit-go/output"
-import "github.com/Shopify/sarama"
 import (
   "fmt"
-  "reflect"
   "unsafe"
   "C"
-  // "os"
-  // "flag"
-  // "strings"
   "github.com/ugorji/go/codec"
-  // // "time"
-  // "encoding/json"
-  "io"
+  "github.com/Shopify/sarama"
+  "encoding/json"
+  "io" 
+  "reflect"
 )
 
 //export FLBPluginInit
@@ -23,96 +19,56 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 
 //export FLBPluginFlush
 func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
-  var count int
   var h codec.Handle = new(codec.MsgpackHandle)
   var b []byte
   var m interface{}
   var err error
+  var enc_data []byte
 
   b = C.GoBytes(data, length)
   dec := codec.NewDecoderBytes(b, h)
 
   // Iterate the original MessagePack array
-  count = 0
   for {
-    // Decode the entry
+    // Decode the msgpack data
     err = dec.Decode(&m)
     if err != nil {
-      break
+      if err == io.EOF {
+        break
+      }
+      fmt.Printf("Failed to decode msgpack data: %v", err)
+      return output.FLB_ERROR
     }
 
-    // Get two main entries: timestamp and map
-    slice := reflect.ValueOf(m)
-    timestamp := slice.Index(0)
-    data := slice.Index(1)
+    // Encode the data as json
+    format := "msgpack"
+
+    if format == "json" {
+      enc_data, err = encode_as_json(m)
+    } else if format == "msgpack" {
+      enc_data, err = encode_as_msgpack(m)
+    }
+    if err != nil {
+      fmt.Printf("Failed to encode %s data: %v", format, err)
+      return output.FLB_ERROR
+    }
+
+    // Send message to kafka
     brokerList := []string{"localhost:9092"}
-    // var message string
-
-    // Convert slice map to a real map and iterate
-    map_data := data.Interface().(map[interface{}] interface{})
-
-
-    fmt.Printf("timestamp=%d\n", timestamp)
-    fmt.Printf("count: %d", count)
-    // time := fmt.Sprintf("%d", timestamp)
-
-    for k, v := range map_data {
-      fmt.Printf("     key[%s] value[%v]\n", k, v)
-      // message = fmt.Sprintf("%v", v)
-    }
-
-    // establish struct for logs
-    type Log struct {
-      Timestamp string
-      Log string
-    }
-
-
-    // msgpack
-    var (
-      w io.Writer
-      b []byte
-      mh codec.MsgpackHandle
-    )
-
-
-    enc := codec.NewEncoder(w, &mh)
-    enc = codec.NewEncoderBytes(&b, &mh)
-    err = enc.Encode(&m)
-    // fmt.Printf("MESSSSAGEPACK: %v", b)
-
-
-
-    // JSON
-    // log := Log{
-    //   Timestamp: time,
-    //   Log: message,
-    // }
-    // // convert struct to json
-    // enc, err := json.Marshal(log)
-    // if err == nil {
-    //   fmt.Println("error with MARSHAL:", err)
-    // }
-
-
-
-    // send message to kafka
-    var er error
     config := sarama.NewConfig()
-    producer, er := sarama.NewSyncProducer(brokerList, config)
-    if er != nil {
-      fmt.Printf("Failed to start Sarama producer:", err)
+    producer, err := sarama.NewSyncProducer(brokerList, config)
+
+    if err != nil {
+      fmt.Printf("Failed to start Sarama producer: %v", err)
+      return output.FLB_ERROR
     }
 
     producer.SendMessage(&sarama.ProducerMessage {
       Topic: "test",
       Key:   nil,
-      Value: sarama.ByteEncoder(b),
-      // Value: sarama.ByteEncoder(encoded_log_bytes),
-      // Value: sarama.StringEncoder(time),
+      Value: sarama.ByteEncoder(enc_data),
     })
 
-    count++
     producer.Close()
   }
 
@@ -124,8 +80,50 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
   return output.FLB_OK
 }
 
+func encode_as_json(m interface {}) ([]byte, error) {
+    slice := reflect.ValueOf(m)
+    timestamp := slice.Index(0)
+    data := slice.Index(1)
 
-//export FLBPluginExit
+    // Convert slice map to a real map and iterate
+    map_data := data.Interface().(map[interface{}] interface{})
+
+
+    // fmt.Printf("timestamp=%d\n", timestamp)
+    time := fmt.Sprintf("%d", timestamp)
+    var message string
+
+    for _, v := range map_data {
+      // fmt.Printf("     key[%s] value[%v]\n", k, v)
+      message = fmt.Sprintf("%v", v)
+    }
+    type Log struct {
+      Timestamp string
+      Log string
+    }
+
+    log := Log{
+      Timestamp: time,
+      Log: message,
+    }
+
+  return json.Marshal(log)
+}
+
+func encode_as_msgpack(m interface {}) ([]byte, error) {
+  var (
+    mh codec.MsgpackHandle
+    w io.Writer
+    b []byte
+  )
+
+  enc := codec.NewEncoder(w, &mh)
+  enc = codec.NewEncoderBytes(&b, &mh)
+  err := enc.Encode(&m)
+  return b, err
+}
+
+// export FLBPluginExit
 func FLBPluginExit() int {
   return 0
 }
