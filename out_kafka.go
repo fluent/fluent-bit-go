@@ -41,12 +41,14 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
     }
 
     // Encode the data as json
-    format := "msgpack"
+    format := "json"
 
     if format == "json" {
       enc_data, err = encode_as_json(m)
     } else if format == "msgpack" {
       enc_data, err = encode_as_msgpack(m)
+    } else if format == "string" {
+      // enc_data, err == encode_as_string(m)
     }
     if err != nil {
       fmt.Printf("Failed to encode %s data: %v", format, err)
@@ -81,31 +83,29 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 }
 
 func encode_as_json(m interface {}) ([]byte, error) {
-    slice := reflect.ValueOf(m)
-    timestamp := slice.Index(0)
-    data := slice.Index(1)
+  slice := reflect.ValueOf(m)
+  timestamp := slice.Index(0).Interface().(uint64)
+  record := slice.Index(1).Interface().(map[interface{}] interface{})
 
-    // Convert slice map to a real map and iterate
-    map_data := data.Interface().(map[interface{}] interface{})
+  // convert from map[interface{}] interface{} to map[string] interface{}
+  // as JSON encoder can't encode non-string keys
+  record2 := make(map[string] interface{})
+  for k, v := range record {
+    record2[k.(string)] = v
+  }
 
+  // TODO
+  // add timestamp to record2, Marshal record2, remove log from
 
-    // fmt.Printf("timestamp=%d\n", timestamp)
-    time := fmt.Sprintf("%d", timestamp)
-    var message string
+  type Log struct {
+    Time uint64
+    Record map[string] interface{}
+  }
 
-    for _, v := range map_data {
-      // fmt.Printf("     key[%s] value[%v]\n", k, v)
-      message = fmt.Sprintf("%v", v)
-    }
-    type Log struct {
-      Timestamp string
-      Log string
-    }
-
-    log := Log{
-      Timestamp: time,
-      Log: message,
-    }
+  log := Log {
+    Time: timestamp,
+    Record: record2,
+  }
 
   return json.Marshal(log)
 }
@@ -122,6 +122,10 @@ func encode_as_msgpack(m interface {}) ([]byte, error) {
   err := enc.Encode(&m)
   return b, err
 }
+
+// func encode_as_string(m interface {}) ([]byte, error) {
+
+// }
 
 // export FLBPluginExit
 func FLBPluginExit() int {
