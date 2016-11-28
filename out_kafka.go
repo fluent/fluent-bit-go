@@ -1,15 +1,15 @@
 package main
 
-import "github.com/fluent/fluent-bit-go/output"
 import (
-  "fmt"
-  "unsafe"
-  "C"
+  "github.com/fluent/fluent-bit-go/output"
   "github.com/ugorji/go/codec"
   "github.com/Shopify/sarama"
   "encoding/json"
-  "io" 
   "reflect"
+  "unsafe"
+  "fmt"
+  "io" 
+  "C"
 )
 
 //export FLBPluginInit
@@ -40,7 +40,7 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
       return output.FLB_ERROR
     }
 
-    // Encode the data as json
+    // select format until config files are available for fluentbit
     format := "json"
 
     if format == "json" {
