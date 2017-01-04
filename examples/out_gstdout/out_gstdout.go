@@ -9,9 +9,18 @@ import (
 	"reflect"
 )
 
+//export FLBPluginRegister
+func FLBPluginRegister(ctx unsafe.Pointer) int {
+	return output.FLBPluginRegister(ctx, "gstdout", "Stdout GO!")
+}
+
 //export FLBPluginInit
 func FLBPluginInit(ctx unsafe.Pointer) int {
-	return output.FLBPluginRegister(ctx, "gstdout", "Stdout GO!")
+
+	// Example to retrieve an optional configuration parameter
+	param := output.FLBPluginConfigKey(ctx, "param")
+	fmt.Printf("plugin parameter = '%s'\n", param)
+	return output.FLB_OK
 }
 
 //export FLBPluginFlush
@@ -59,7 +68,7 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 
 //export FLBPluginExit
 func FLBPluginExit() int {
-	return 0
+	return output.FLB_OK
 }
 
 func main() {

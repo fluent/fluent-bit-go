@@ -2,13 +2,14 @@
 
 The following example code implements a simple output plugin that prints the records to the standard output interface (STDOUT).
 
-Every output plugin go through three callbacks associated to different phases:
+Every output plugin go through four callbacks associated to different phases:
 
 | Plugin Phase        | Callback                   |
 |---------------------|----------------------------|
 | Registration        | FLBPluginRegister()        |
 | Initialization      | FLBPluginInit()            |
 | Runtime Flush       | FLBPluginFlush()           |
+| Exit                | FLBPluginExit()            |
 
 ## Plugin Registration
 
@@ -58,3 +59,14 @@ When done, there are three returning values available:
 | FLB\_OK       | The data have been processed normally.         |
 | FLB\_ERROR    | An internal error have ocurred, the plugin will not handle the set of records/data again. |
 | FLB\_RETRY    | A recoverable error have ocurred, the engine can try to flush the records/data later.|
+
+## Plugin Exit
+
+When Fluent Bit will stop using the instance of the plugin, it will trigger the exit callback. e.g:
+
+```go
+//export FLBPluginExit
+func FLBPluginExit() int {
+	return output.FLB_OK
+}
+```
