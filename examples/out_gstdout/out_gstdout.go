@@ -9,9 +9,18 @@ import (
 	"reflect"
 )
 
-//export FLBPluginInit
-func FLBPluginInit(ctx unsafe.Pointer) int {
+//export FLBPluginRegister
+// ctx (context) pointer to fluentbit context (state/ c code)
+func FLBPluginRegister(ctx unsafe.Pointer) int {
+	// roll call for the specifics of the plugin
 	return output.FLBPluginRegister(ctx, "gstdout", "Stdout GO!")
+}
+
+//export FLBPluginInit
+// (fluentbit will call this)
+// ctx (context) pointer to fluentbit context (state/ c code)
+func FLBPluginInit(ctx unsafe.Pointer) int {
+	return output.FLB_OK
 }
 
 //export FLBPluginFlush
