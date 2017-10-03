@@ -34,7 +34,7 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 	count = 0
 	for {
 		// Extract Record
-		ret, ts, record = output.FLBGetRecord(dec)
+		ret, ts, record = output.GetRecord(dec)
 		if ret != 0 {
 			break
 		}
