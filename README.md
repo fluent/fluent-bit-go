@@ -22,7 +22,7 @@ import "github.com/fluent/fluent-bit-go/output"
 
 for a more practical example please refer to the _out\_gstdout_ plugin implementation located at:
 
-https://github.com/fluent/fluent-bit-go/blob/master/examples/out_gstdout/out_gstdout.go
+https://github.com/fluent/fluent-bit-go/blob/api-0.12/examples/out_gstdout/out_gstdout.go
 
 ## Contact
 
