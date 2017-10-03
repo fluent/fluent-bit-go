@@ -67,7 +67,7 @@ func NewDecoder(data unsafe.Pointer, length int) (*FLBDecoder) {
 	return dec
 }
 
-func FLBGetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]interface{}) {
+func GetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]interface{}) {
 	var check error
 	var m interface{}
 
