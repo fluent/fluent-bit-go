@@ -17,25 +17,28 @@
  *  limitations under the License.
  */
 
-#ifndef FLBGO_PLUGIN_H
-#define FLBGO_PLUGIN_H
+#ifndef FLBGO_OUTPUT_H
+#define FLBGO_OUTPUT_H
 
-/* Return values */
-#define FLB_ERROR   0
-#define FLB_OK      1
-#define FLB_RETRY   2
+#include <stdio.h>
 
-/* Proxy definition */
-#define FLB_PROXY_OUTPUT_PLUGIN    2
-#define FLB_PROXY_GOLANG          11
-
-/* Structure used for registration, it match the one on flb_plugin_proxy.h */
-struct flb_plugin_proxy {
-    int type;
-    int proxy;
-    int flags;
-    char *name;
-    char *description;
+struct flb_api {
+    char *(*output_get_property) (char *, void *);
 };
+
+struct flbgo_output_plugin {
+    char *name;
+    struct flb_api *api;
+    void *o_ins;
+    int (*cb_init)();
+    int (*cb_flush)(void *, size_t, char *);
+    int (*cb_exit)(void *);
+};
+
+char *output_get_property(char *key, void *ctx)
+{
+    struct flbgo_output_plugin *plugin = ctx;
+    return plugin->api->output_get_property(key, plugin->o_ins);
+}
 
 #endif

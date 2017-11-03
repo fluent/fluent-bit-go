@@ -2,6 +2,12 @@
 
 This repository contains Go packages that allows to create [Fluent Bit](http://fluentbit.io) plugins. At the moment it only supports the creation of _Output_ plugins.
 
+## Requirements
+
+The code of this package is intended to be used with [Fluent Bit 0.12](https://github.com/fluent/fluent-bit/tree/0.12) branch.
+
+> Fluent Bit on GIT master (0.12) uses a different format to set records timestamps, this package is not backward compatible with Fluent Bit 0.11
+
 ## Usage
 
 Fluent Bit Go packages are exposed on this repository:
@@ -16,7 +22,7 @@ import "github.com/fluent/fluent-bit-go/output"
 
 for a more practical example please refer to the _out\_gstdout_ plugin implementation located at:
 
-https://github.com/fluent/fluent-bit-go/blob/master/examples/out_gstdout/out_gstdout.go
+https://github.com/fluent/fluent-bit-go/blob/api-0.12/examples/out_gstdout/out_gstdout.go
 
 ## Contact
 

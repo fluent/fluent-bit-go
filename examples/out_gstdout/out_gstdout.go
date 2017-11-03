@@ -2,17 +2,13 @@ package main
 
 import "github.com/fluent/fluent-bit-go/output"
 import (
-	"github.com/ugorji/go/codec"
 	"fmt"
 	"unsafe"
 	"C"
-	"reflect"
 )
 
 //export FLBPluginRegister
-// ctx (context) pointer to fluentbit context (state/ c code)
 func FLBPluginRegister(ctx unsafe.Pointer) int {
-	// roll call for the specifics of the plugin
 	return output.FLBPluginRegister(ctx, "gstdout", "Stdout GO!")
 }
 
@@ -20,38 +16,36 @@ func FLBPluginRegister(ctx unsafe.Pointer) int {
 // (fluentbit will call this)
 // ctx (context) pointer to fluentbit context (state/ c code)
 func FLBPluginInit(ctx unsafe.Pointer) int {
+	// Example to retrieve an optional configuration parameter
+	param := output.FLBPluginConfigKey(ctx, "param")
+	fmt.Printf("[flb-go] plugin parameter = '%s'\n", param)
 	return output.FLB_OK
 }
 
 //export FLBPluginFlush
 func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 	var count int
-	var h codec.Handle = new(codec.MsgpackHandle)
-	var b []byte
-	var m interface{}
-	var err error
+	var ret int
+	var ts interface{}
+	var record map[interface{}]interface{}
 
-	b = C.GoBytes(data, length)
-	dec := codec.NewDecoderBytes(b, h)
+	// Create Fluent Bit decoder
+	dec := output.NewDecoder(data, int(length))
 
-	// Iterate the original MessagePack array
+	// Iterate Records
 	count = 0
 	for {
-		// Decode the entry
-		err = dec.Decode(&m)
-		if err != nil {
+		// Extract Record
+		ret, ts, record = output.GetRecord(dec)
+		if ret != 0 {
 			break
 		}
 
-		// Get a slice and their two entries: timestamp and map
-		slice := reflect.ValueOf(m)
-		timestamp := slice.Index(0)
-		data := slice.Index(1)
-
-		// Convert slice data to a real map and iterate
-		map_data := data.Interface().(map[interface{}] interface{})
-		fmt.Printf("[%d] %s: [%d, {", count, C.GoString(tag), timestamp)
-		for k, v := range map_data {
+		// Print record keys and values
+		timestamp := ts.(output.FLBTime)
+		fmt.Printf("[%d] %s: [%s, {", count, C.GoString(tag),
+			timestamp.String())
+		for k, v := range record {
 			fmt.Printf("\"%s\": %v, ", k, v)
 		}
 		fmt.Printf("}\n")
@@ -68,7 +62,7 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 
 //export FLBPluginExit
 func FLBPluginExit() int {
-	return 0
+	return output.FLB_OK
 }
 
 func main() {
