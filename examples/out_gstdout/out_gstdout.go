@@ -2,9 +2,9 @@ package main
 
 import "github.com/fluent/fluent-bit-go/output"
 import (
+	"C"
 	"fmt"
 	"unsafe"
-	"C"
 )
 
 //export FLBPluginRegister
@@ -42,9 +42,9 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 		}
 
 		// Print record keys and values
-		timestamp := ts.(output.FLBTime)
+		timestamp := ts
 		fmt.Printf("[%d] %s: [%s, {", count, C.GoString(tag),
-			timestamp.String())
+			timestamp)
 		for k, v := range record {
 			fmt.Printf("\"%s\": %v, ", k, v)
 		}
