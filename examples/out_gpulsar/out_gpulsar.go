@@ -5,25 +5,12 @@ import (
 	"C"
 	"context"
 	"fmt"
-	"io/ioutil"
 	"strings"
 	"unsafe"
 
 	"github.com/Terry-Mao/goconf"
 	"github.com/apache/pulsar/pulsar-client-go/pulsar"
 )
-
-func getFileContentAsString(filePath string) (string, error) {
-	//logger.Infof("get file content as lines: %v", filePath)
-	result := ""
-	b, err := ioutil.ReadFile(filePath)
-	if err != nil {
-		//logger.Errorf("read file: %v error: %v", filePath, err)
-		return result, err
-	}
-
-	return string(b), nil
-}
 
 func isMap(x interface{}) bool {
 	t := fmt.Sprintf("%T", x)
