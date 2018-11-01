@@ -88,7 +88,6 @@ func deinitPulsar() {
 
 //export FLBPluginRegister
 func FLBPluginRegister(ctx unsafe.Pointer) int {
-	initPulsar()
 	return output.FLBPluginRegister(ctx, "gpulsar", "Pulsar GO!")
 }
 
@@ -99,6 +98,9 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 	// Example to retrieve an optional configuration parameter
 	param := output.FLBPluginConfigKey(ctx, "param")
 	fmt.Printf("[flb-go] plugin parameter = '%s'\n", param)
+
+	initPulsar()
+
 	return output.FLB_OK
 }
 
