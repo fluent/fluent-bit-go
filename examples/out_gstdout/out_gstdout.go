@@ -1,23 +1,24 @@
 package main
 
-import "github.com/fluent/fluent-bit-go/output"
 import (
+	"C"
 	"fmt"
 	"unsafe"
-	"C"
+
+	"github.com/fluent/fluent-bit-go/output"
 )
 
 //export FLBPluginRegister
-func FLBPluginRegister(ctx unsafe.Pointer) int {
-	return output.FLBPluginRegister(ctx, "gstdout", "Stdout GO!")
+func FLBPluginRegister(def unsafe.Pointer) int {
+	return output.FLBPluginRegister(def, "gstdout", "Stdout GO!")
 }
 
 //export FLBPluginInit
 // (fluentbit will call this)
-// ctx (context) pointer to fluentbit context (state/ c code)
-func FLBPluginInit(ctx unsafe.Pointer) int {
+// plugin (context) pointer to fluentbit context (state/ c code)
+func FLBPluginInit(plugin unsafe.Pointer) int {
 	// Example to retrieve an optional configuration parameter
-	param := output.FLBPluginConfigKey(ctx, "param")
+	param := output.FLBPluginConfigKey(plugin, "param")
 	fmt.Printf("[flb-go] plugin parameter = '%s'\n", param)
 	return output.FLB_OK
 }
