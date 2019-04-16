@@ -29,8 +29,10 @@
 #define FLB_PROXY_OUTPUT_PLUGIN    2
 #define FLB_PROXY_GOLANG          11
 
-/* Structure used for registration, it match the one on flb_plugin_proxy.h */
-struct flb_plugin_proxy {
+/* This structure is used for registration.
+ * It matches the one in flb_plugin_proxy.h in fluent-bit source code.
+ */
+struct flb_plugin_proxy_def {
     int type;
     int proxy;
     int flags;

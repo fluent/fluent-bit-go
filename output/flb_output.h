@@ -20,25 +20,28 @@
 #ifndef FLBGO_OUTPUT_H
 #define FLBGO_OUTPUT_H
 
-#include <stdio.h>
-
 struct flb_api {
     char *(*output_get_property) (char *, void *);
 };
 
-struct flbgo_output_plugin {
-    char *name;
-    struct flb_api *api;
-    void *o_ins;
-    int (*cb_init)();
-    int (*cb_flush)(void *, size_t, char *);
-    int (*cb_exit)(void *);
+struct flb_plugin_proxy_context {
+    void *remote_context;
 };
 
-char *output_get_property(char *key, void *ctx)
+/* This structure is used for initialization.
+ * It matches the one in proxy/go/go.c in fluent-bit source code.
+ */
+struct flbgo_output_plugin {
+    void *_;
+    struct flb_api *api;
+    struct flb_output_instance *o_ins;
+    struct flb_plugin_proxy_context *context;
+};
+
+char *output_get_property(char *key, void *plugin)
 {
-    struct flbgo_output_plugin *plugin = ctx;
-    return plugin->api->output_get_property(key, plugin->o_ins);
+    struct flbgo_output_plugin *p = plugin;
+    return p->api->output_get_property(key, p->o_ins);
 }
 
 #endif
