@@ -62,7 +62,7 @@ data, the proper bytes length and the associated tag.
 
 ```go
 //export FLBPluginFlushCtx
-func FLBPluginFlush(ctx, data unsafe.Pointer, length C.int, tag *C.char) int {
+func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int {
 
     id := *(*string)(ctx)
 	log.Printf("[multiinstance] Flush called for id: %s", *id)
@@ -98,3 +98,31 @@ $ cd $GOPATH/src/github.com/fluent/fluent-bit-go/examples/out_multiinstance
 $ docker build . -t fluent-bit-multiinstance
 $ docker run -it --rm fluent-bit-multiinstance
 ```
+
+The output produced should resemble the following:
+```
+Fluent Bit v1.1.0
+Copyright (C) Treasure Data
+
+[2019/05/17 22:33:04] [ info] [storage] initializing...
+[2019/05/17 22:33:04] [ info] [storage] in-memory
+[2019/05/17 22:33:04] [ info] [storage] normal synchronization mode, checksum
+disabled
+[2019/05/17 22:33:04] [ info] [engine] started (pid=1)
+2019/05/17 22:33:04 [multiinstance] id = "cpu_metrics"
+2019/05/17 22:33:04 [multiinstance] id = "dummy_metrics"
+[2019/05/17 22:33:04] [ info] [sp] stream processor started
+2019/05/17 22:33:09 [multiinstance] Flush called for id: cpu_metrics
+[0] cpu.local: [2019-05-17 22:33:05.0007371 +0000 UTC, {"cpu0.p_user": 0, "cpu1.p_cpu": 3, "cpu2.p_cpu": 0, "cpu3.p_user": 0, "cpu_p": 1.5, "system_p": 1.25, "cpu0.p_cpu": 3, "cpu0.p_system": 3, "cpu1.p_user": 1, "cpu2.p_system": 0, "cpu2.p_user": 0, "cpu3.p_cpu": 0, "cpu3.p_system": 0, "user_p": 0.25, "cpu1.p_system": 2, }
+[1] cpu.local: [2019-05-17 22:33:06.0026806 +0000 UTC, {"cpu1.p_user": 0, "cpu2.p_system": 0, "cpu1.p_system": 0, "cpu2.p_cpu": 0, "cpu3.p_user": 0, "cpu0.p_system": 0, "cpu1.p_cpu": 0, "system_p": 0, "cpu0.p_cpu": 0, "cpu0.p_user": 0, "cpu2.p_user": 0, "cpu3.p_cpu": 0, "cpu3.p_system": 0, "cpu_p": 0, "user_p": 0, }
+[2] cpu.local: [2019-05-17 22:33:07.002157 +0000 UTC, {"user_p": 0, "cpu0.p_system": 0, "cpu1.p_user": 0, "cpu3.p_user": 0, "cpu3.p_system": 0, "system_p": 0.25, "cpu0.p_user": 0, "cpu1.p_cpu": 1, "cpu2.p_user": 0, "cpu_p": 0.25, "cpu0.p_cpu": 0, "cpu1.p_system": 1, "cpu2.p_cpu": 0, "cpu3.p_cpu": 0, "cpu2.p_system": 0, }
+[3] cpu.local: [2019-05-17 22:33:08.0014056 +0000 UTC, {"cpu0.p_cpu": 0, "cpu2.p_cpu": 0, "user_p": 0, "cpu1.p_cpu": 1, "cpu1.p_user": 0, "cpu1.p_system": 1, "cpu2.p_system": 0, "cpu3.p_cpu": 0, "cpu0.p_user": 0, "cpu2.p_user": 0, "cpu3.p_system": 0, "cpu_p": 0.25, "system_p": 0.25, "cpu0.p_system": 0, "cpu3.p_user": 0, }
+2019/05/17 22:33:09 [multiinstance] Flush called for id: dummy_metrics
+[0] dummy.local: [2019-05-17 22:33:05.0008583 +0000 UTC, {"message": [100 117 109 109 121], }
+[1] dummy.local: [2019-05-17 22:33:06.0027443 +0000 UTC, {"message": [100 117 109 109 121], }
+[2] dummy.local: [2019-05-17 22:33:07.0022096 +0000 UTC, {"message": [100 117 109 109 121], }
+[3] dummy.local: [2019-05-17 22:33:08.0014587 +0000 UTC, {"message": [100 117 109 109 121], }
+```
+
+As you can see each instance has their own set of outputs along with the
+configuration context made available.
