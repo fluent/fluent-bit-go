@@ -65,7 +65,7 @@ data, the proper bytes length and the associated tag.
 func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int {
 
     id := *(*string)(ctx)
-	log.Printf("[multiinstance] Flush called for id: %s", *id)
+    log.Printf("[multiinstance] Flush called for id: %s", *id)
     return output.FLB_OK
 }
 ```
