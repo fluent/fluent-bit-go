@@ -1,7 +1,9 @@
+// +build example
 package main
 
 import (
 	"C"
+	"fmt"
 	"log"
 	"unsafe"
 
@@ -24,23 +26,34 @@ func FLBPluginInit(plugin unsafe.Pointer) int {
 
 //export FLBPluginFlush
 func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
-	log.Print("Flush called for unknown instance")
+	log.Print("[multiinstance] Flush called for unknown instance")
 	return output.FLB_OK
 }
 
 //export FLBPluginFlushCtx
 func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int {
 	// Cast context back into the original type for the Go variable
-	id := (*string)(ctx)
-	log.Printf("Flush called for id: %s", *id)
+	id := *(*string)(ctx)
+	log.Printf("[multiinstance] Flush called for id: %s", id)
 
 	dec := output.NewDecoder(data, int(length))
 
+	count := 0
 	for {
-		ret, _, _ := output.GetRecord(dec)
+		ret, ts, record := output.GetRecord(dec)
 		if ret != 0 {
 			break
 		}
+
+		// Print record keys and values
+		timestamp := ts.(output.FLBTime)
+		fmt.Printf("[%d] %s: [%s, {", count, C.GoString(tag), timestamp.String())
+
+		for k, v := range record {
+			fmt.Printf("\"%s\": %v, ", k, v)
+		}
+		fmt.Printf("}\n")
+		count++
 	}
 
 	return output.FLB_OK
