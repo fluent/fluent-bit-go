@@ -43,7 +43,7 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 	id := output.FLBPluginConfigKey(plugin, "id")
 	log.Printf("[multiinstance] id = %q", id)
 	// Set the context to point to any Go variable
-	output.FLBPluginSetContext(plugin, unsafe.Pointer(&id))
+	output.FLBPluginSetContext(plugin, id)
 	return output.FLB_OK
 }
 ```
@@ -63,10 +63,10 @@ data, the proper bytes length and the associated tag.
 ```go
 //export FLBPluginFlushCtx
 func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int {
-
-    id := *(*string)(ctx)
-    log.Printf("[multiinstance] Flush called for id: %s", *id)
-    return output.FLB_OK
+	// Type assert context back into the original type for the Go variable
+	id := output.FLBPluginGetContext(ctx).(string)
+	log.Printf("[multiinstance] Flush called for id: %s", id)
+	return output.FLB_OK
 }
 ```
 
@@ -94,8 +94,7 @@ func FLBPluginExit() int {
 Build the docker image locally to see how it works.
 
 ```bash
-$ cd $GOPATH/src/github.com/fluent/fluent-bit-go/examples/out_multiinstance
-$ docker build . -t fluent-bit-multiinstance
+$ docker build . -t fluent-bit-multiinstance -f examples/out_multiinstance/Dockerfile
 $ docker run -it --rm fluent-bit-multiinstance
 ```
 
