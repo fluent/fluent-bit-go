@@ -1,18 +1,16 @@
 # Fluent Bit Go!
 
-This repository contains Go packages that allows to create [Fluent Bit](http://fluentbit.io) plugins. At the moment it only supports the creation of _Output_ plugins.
+This repository contains Go packages that allows to create [Fluent Bit][fluent-bit] plugins. At the moment it only supports the creation of _Output_ plugins.
 
 ## Requirements
 
-The code of this package is intended to be used with [Fluent Bit 0.12](https://github.com/fluent/fluent-bit/tree/0.12) branch.
-
-> Fluent Bit on GIT master (0.12) uses a different format to set records timestamps, this package is not backward compatible with Fluent Bit 0.11
+The code of this package is intended to be used with [Fluent Bit v1.1][fluent-bit-1-1] branch.
 
 ## Usage
 
 Fluent Bit Go packages are exposed on this repository:
 
-[github.com/fluent/fluent-bit-go](http://github.com/fluent/fluent-bit-go)
+[github.com/fluent/fluent-bit-go][fluent-bit-go]
 
 When creating a Fluent Bit Output plugin, the _output_ package can be used as follows:
 
@@ -20,9 +18,7 @@ When creating a Fluent Bit Output plugin, the _output_ package can be used as fo
 import "github.com/fluent/fluent-bit-go/output"
 ```
 
-for a more practical example please refer to the _out\_gstdout_ plugin implementation located at:
-
-https://github.com/fluent/fluent-bit-go/blob/api-0.12/examples/out_gstdout/out_gstdout.go
+For a more practical example please refer to the [out\_multiinstance plugin][multiinstance] implementation located at:
 
 ## Contact
 
@@ -35,5 +31,12 @@ Feel free to join us on our Slack channel, Mailing List, IRC or Twitter:
 
 ## Authors
 
-[Fluent Bit Go](http://fluentbit.io) is made and sponsored by [Treasure Data](http://treasuredata.com) among
-other [contributors](https://github.com/fluent/fluent-bit-go/graphs/contributors).
+[Fluent Bit Go][fluent-bit] is made and sponsored by [Treasure Data][treasure-data] among
+other [contributors][contributors].
+
+[fluent-bit]: http://fluentbit.io/
+[fluent-bit-1-1]: https://github.com/fluent/fluent-bit/tree/v1.1.0
+[multiinstance]: https://github.com/fluent/fluent-bit-go/tree/fc386d263885e50387dd0081a77adf4072e8e4b6/examples/out_multiinstance
+[fluent-bit-go]: http://github.com/fluent/fluent-bit-go
+[treasure-data]: http://treasuredata.com
+[contributors]: https://github.com/fluent/fluent-bit-go/graphs/contributors
