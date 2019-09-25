@@ -4,7 +4,7 @@ This repository contains Go packages that allows to create [Fluent Bit][fluent-b
 
 ## Requirements
 
-The code of this package is intended to be used with [Fluent Bit v1.1][fluent-bit-1-1] branch.
+The code of this package is intended to be used with [Fluent Bit v1.1][fluent-bit-1-1] branch or higher.
 
 ## Usage
 
