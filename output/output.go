@@ -71,6 +71,10 @@ func FLBPluginConfigKey(plugin unsafe.Pointer, key string) string {
 
 var contexts []interface{}
 
+// FLBPluginSetContext may set up potentially faulting address.
+// It would construct and use an invalid pointer,
+// so mark it as nocheckptr.
+//go:nocheckptr
 func FLBPluginSetContext(plugin unsafe.Pointer, ctx interface{}) {
 	i := len(contexts)
 	contexts = append(contexts, ctx)
