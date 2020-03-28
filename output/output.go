@@ -69,15 +69,15 @@ func FLBPluginConfigKey(plugin unsafe.Pointer, key string) string {
 	return value
 }
 
-var contexts []interface{}
+var contexts = make(map[uintptr]interface{})
 
 func FLBPluginSetContext(plugin unsafe.Pointer, ctx interface{}) {
-	i := len(contexts)
-	contexts = append(contexts, ctx)
+	i := unsafe.Pointer(C.CString(""))
+	contexts[uintptr(i)] = ctx
 	p := (*FLBOutPlugin)(plugin)
-	p.context.remote_context = unsafe.Pointer(uintptr(i))
+	p.context.remote_context = i
 }
 
 func FLBPluginGetContext(i unsafe.Pointer) interface{} {
-	return contexts[int(uintptr(i))]
+	return contexts[uintptr(i)]
 }
