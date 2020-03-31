@@ -72,7 +72,14 @@ func FLBPluginConfigKey(plugin unsafe.Pointer, key string) string {
 var contexts = make(map[uintptr]interface{})
 
 func FLBPluginSetContext(plugin unsafe.Pointer, ctx interface{}) {
+	// Allocate a byte of memory in the C heap and fill it with '\0',
+	// then convert its pointer into the C type void*, represented by unsafe.Pointer.
+	// The C string is not managed by Go GC, so it will not be freed automatically.
 	i := unsafe.Pointer(C.CString(""))
+	// uintptr(i) produces the memory address of i, and malloc() guarantees uniqueness of it.
+	//
+	// FLBPluginSetContext must not be called concurrently with itself or FLBPluginGetContext.
+	// A sync.RWMutex must be added if this might happen.
 	contexts[uintptr(i)] = ctx
 	p := (*FLBOutPlugin)(plugin)
 	p.context.remote_context = i
