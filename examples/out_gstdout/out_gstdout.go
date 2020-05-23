@@ -3,6 +3,7 @@ package main
 import (
 	"C"
 	"fmt"
+	"time"
 	"unsafe"
 
 	"github.com/fluent/fluent-bit-go/output"
@@ -42,8 +43,18 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
 			break
 		}
 
+		var timestamp time.Time
+		switch t := ts.(type) {
+		case output.FLBTime:
+			timestamp = ts.(output.FLBTime).Time
+		case uint64:
+			timestamp = time.Unix(int64(t), 0)
+		default:
+			fmt.Println("time provided invalid, defaulting to now.")
+			timestamp = time.Now()
+		}
+
 		// Print record keys and values
-		timestamp := ts.(output.FLBTime)
 		fmt.Printf("[%d] %s: [%s, {", count, C.GoString(tag),
 			timestamp.String())
 		for k, v := range record {
