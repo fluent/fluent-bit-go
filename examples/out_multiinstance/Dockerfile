@@ -1,4 +1,4 @@
-FROM golang:1.12 as gobuilder
+FROM golang:1.14 as gobuilder
 
 WORKDIR /root
 
@@ -7,16 +7,14 @@ ENV GOOS=linux\
 
 COPY / /root/
 
-RUN go build \
-    -buildmode=c-shared \
-    -o /out_multiinstance.so \
-    github.com/fluent/fluent-bit-go/examples/out_multiinstance
+RUN go mod edit -replace github.com/fluent/fluent-bit-go=github.com/fluent/fluent-bit-go@master
+RUN go mod download & make all
 
-FROM fluent/fluent-bit:1.1
+FROM fluent/fluent-bit:1.4
 
-COPY --from=gobuilder /out_multiinstance.so /fluent-bit/bin/
-COPY --from=gobuilder /root/examples/out_multiinstance/fluent-bit.conf /fluent-bit/etc/
-COPY --from=gobuilder /root/examples/out_multiinstance/plugins.conf /fluent-bit/etc/
+COPY --from=gobuilder /root/out_multiinstance.so /fluent-bit/bin/
+COPY --from=gobuilder /root/fluent-bit.conf /fluent-bit/etc/
+COPY --from=gobuilder /root/plugins.conf /fluent-bit/etc/
 
 EXPOSE 2020
 
