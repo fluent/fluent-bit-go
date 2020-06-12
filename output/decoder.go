@@ -77,6 +77,10 @@ func GetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]in
 	}
 
 	slice := reflect.ValueOf(m)
+	if slice.Kind() != reflect.Slice || slice.Len() != 2 {
+		return -1, 0, nil
+	}
+
 	t := slice.Index(0).Interface()
 	data := slice.Index(1)
 
