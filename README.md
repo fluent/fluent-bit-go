@@ -4,7 +4,7 @@ This repository contains Go packages that allows to create [Fluent Bit][fluent-b
 
 ## Requirements
 
-The code of this package is intended to be used with [Fluent Bit v1.1][fluent-bit-1-1] branch or higher.
+The code of this package is intended to be used with [Fluent Bit v1.4][fluent-bit-1-4] branch or higher.
 
 ## Usage
 
@@ -35,7 +35,7 @@ Feel free to join us on our Slack channel, Mailing List, IRC or Twitter:
 other [contributors][contributors].
 
 [fluent-bit]: http://fluentbit.io/
-[fluent-bit-1-1]: https://github.com/fluent/fluent-bit/tree/v1.1.0
+[fluent-bit-1-4]: https://github.com/fluent/fluent-bit/tree/v1.4.0
 [multiinstance]: https://github.com/fluent/fluent-bit-go/tree/fc386d263885e50387dd0081a77adf4072e8e4b6/examples/out_multiinstance
 [fluent-bit-go]: http://github.com/fluent/fluent-bit-go
 [treasure-data]: http://treasuredata.com

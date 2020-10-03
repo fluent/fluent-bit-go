@@ -72,6 +72,12 @@ func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int 
 
 //export FLBPluginExit
 func FLBPluginExit() int {
+	log.Print("[multiinstance] Exit called for unknown instance")
+	return output.FLB_OK
+}
+
+//export FLBPluginExitCtx
+func FLBPluginExitCtx(ctx unsafe.Pointer) int {
 	return output.FLB_OK
 }
 
