@@ -11,7 +11,7 @@ Every output plugin go through four callbacks associated to different phases:
 | Registration        | FLBPluginRegister()        |
 | Initialization      | FLBPluginInit()            |
 | Runtime Flush       | FLBPluginFlushCtx()        |
-| Exit                | FLBPluginExit()            |
+| Exit                | FLBPluginExitCtx()         |
 
 ## Plugin Registration
 
@@ -83,8 +83,8 @@ When done, there are three returning values available:
 When Fluent Bit will stop using the instance of the plugin, it will trigger the exit callback. e.g:
 
 ```go
-//export FLBPluginExit
-func FLBPluginExit() int {
+//export FLBPluginExitCtx
+func FLBPluginExitCtx(ctx unsafe.Pointer) int {
 	return output.FLB_OK
 }
 ```
