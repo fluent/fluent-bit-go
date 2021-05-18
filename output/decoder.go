@@ -20,10 +20,11 @@ package output
 import (
 	"C"
 	"encoding/binary"
-	"github.com/ugorji/go/codec"
 	"reflect"
 	"time"
 	"unsafe"
+
+	"github.com/ugorji/go/codec"
 )
 
 type FLBDecoder struct {
@@ -59,7 +60,7 @@ func NewDecoder(data unsafe.Pointer, length int) *FLBDecoder {
 
 	dec := new(FLBDecoder)
 	dec.handle = new(codec.MsgpackHandle)
-	dec.handle.SetExt(reflect.TypeOf(FLBTime{}), 0, &FLBTime{})
+	dec.handle.SetBytesExt(reflect.TypeOf(FLBTime{}), 0, &FLBTime{})
 
 	b = C.GoBytes(data, C.int(length))
 	dec.mpdec = codec.NewDecoderBytes(b, dec.handle)
