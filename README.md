@@ -18,7 +18,7 @@ When creating a Fluent Bit Output plugin, the _output_ package can be used as fo
 import "github.com/fluent/fluent-bit-go/output"
 ```
 
-For a more practical example please refer to the [out\_multiinstance plugin][multiinstance] implementation located at:
+For a more practical example please refer to the [out_multiinstance plugin](./examples/out_multiinstance) implementation
 
 ## Contact
 
