@@ -24,6 +24,7 @@ package output
 */
 import "C"
 import (
+	"sync"
 	"unsafe"
 )
 
@@ -69,22 +70,24 @@ func FLBPluginConfigKey(plugin unsafe.Pointer, key string) string {
 	return value
 }
 
-var contexts = make(map[uintptr]interface{})
+var contexts sync.Map
 
+// FLBPluginSetContext sets the context for plugin to ctx.
+//
+// Limit FLBPluginSetContext calls to once per plugin instance for best performance.
 func FLBPluginSetContext(plugin unsafe.Pointer, ctx interface{}) {
 	// Allocate a byte of memory in the C heap and fill it with '\0',
 	// then convert its pointer into the C type void*, represented by unsafe.Pointer.
 	// The C string is not managed by Go GC, so it will not be freed automatically.
 	i := unsafe.Pointer(C.CString(""))
-	// uintptr(i) produces the memory address of i, and malloc() guarantees uniqueness of it.
-	//
-	// FLBPluginSetContext must not be called concurrently with itself or FLBPluginGetContext.
-	// A sync.RWMutex must be added if this might happen.
-	contexts[uintptr(i)] = ctx
+	// uintptr(i) returns the memory address of i, which is unique in the heap.
+	contexts.Store(uintptr(i), ctx)
 	p := (*FLBOutPlugin)(plugin)
 	p.context.remote_context = i
 }
 
-func FLBPluginGetContext(i unsafe.Pointer) interface{} {
-	return contexts[uintptr(i)]
+// FLBPluginGetContext reads the context associated with proxyCtx.
+func FLBPluginGetContext(proxyCtx unsafe.Pointer) interface{} {
+	v, _ := contexts.Load(uintptr(proxyCtx))
+	return v
 }
