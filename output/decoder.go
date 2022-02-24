@@ -20,6 +20,7 @@ package output
 import (
 	"C"
 	"encoding/binary"
+	"math"
 	"reflect"
 	"time"
 	"unsafe"
@@ -82,7 +83,17 @@ func GetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]in
 		return -2, 0, nil
 	}
 
-	t := slice.Index(0).Interface()
+	var t interface{}
+	switch ts := slice.Index(0).Interface().(type) {
+	case uint64:
+		t = FLBTime{time.Unix(int64(ts), 0)}
+	case float64:
+		secs, frac := math.Modf(ts)
+		t = FLBTime{time.Unix(int64(secs), int64(frac*1000_000_000))}
+	default:
+		t = ts
+	}
+
 	data := slice.Index(1)
 
 	map_data := data.Interface().(map[interface{}]interface{})
