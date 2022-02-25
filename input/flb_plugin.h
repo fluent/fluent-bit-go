@@ -2,7 +2,7 @@
 
 /*  Fluent Bit Go!
  *  ==============
- *  Copyright (C) 2015-2017 Treasure Data Inc.
+ *  Copyright (C) 2022 The Fluent Bit Go Authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,32 +17,27 @@
  *  limitations under the License.
  */
 
-#ifndef FLBGO_OUTPUT_H
-#define FLBGO_OUTPUT_H
+#ifndef FLBGO_PLUGIN_H
+#define FLBGO_PLUGIN_H
 
-struct flb_api {
-    char *(*output_get_property) (char *, void *);
-    char *_;
-};
+/* Return values */
+#define FLB_ERROR   0
+#define FLB_OK      1
+#define FLB_RETRY   2
 
-struct flb_plugin_proxy_context {
-    void *remote_context;
-};
+/* Proxy definition */
+#define FLB_PROXY_INPUT_PLUGIN    1
+#define FLB_PROXY_GOLANG          11
 
-/* This structure is used for initialization.
- * It matches the one in proxy/go/go.c in fluent-bit source code.
+/* This structure is used for registration.
+ * It matches the one in flb_plugin_proxy.h in fluent-bit source code.
  */
-struct flbgo_output_plugin {
-    void *_;
-    struct flb_api *api;
-    struct flb_output_instance *o_ins;
-    struct flb_plugin_proxy_context *context;
+struct flb_plugin_proxy_def {
+    int type;
+    int proxy;
+    int flags;
+    char *name;
+    char *description;
 };
-
-char *output_get_property(char *key, void *plugin)
-{
-    struct flbgo_output_plugin *p = plugin;
-    return p->api->output_get_property(key, p->o_ins);
-}
 
 #endif
