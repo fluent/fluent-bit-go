@@ -49,8 +49,21 @@ When Fluent Bit wants to collect logs from Golang input plugin, the input callba
 The callback will send a raw buffer of msgpack data with it proper bytes length into Fluent Bit core.
 
 ```go
+import "reflect" // Import reflect package.
+
+// Operate safe payload creation.
+func MakePayload(packed []byte) (**C.void, int) {
+	var payload **C.void
+
+	length := len(packed)
+	hdr := (*reflect.SliceHeader)(unsafe.Pointer(&payload))
+	hdr.Data = uintptr(unsafe.Pointer(&packed))
+	hdr.Len = length
+
+	return payload, length
+}
 //export FLBPluginInputCallback
-func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
+func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
 	now := time.Now()
 	// To handle nanosecond precision on Golang input plugin, you must wrap up time instances with input.FLBTime type.
 	flb_time := input.FLBTime{now}
@@ -61,7 +74,9 @@ func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 	// Some encoding logs to msgpack payload stuffs.
 	// It needs to Wait for some period on Golang input plugin side, until the new records are emitted.
 
-	*data = unsafe.Pointer(&packed[0])
+	payload, length := MakePayload(packed)
+
+	*data = *payload
 	*size = C.size_t(len(packed))
 	return input.FLB_OK
 }
