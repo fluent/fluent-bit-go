@@ -4,6 +4,7 @@ import "C"
 import (
 	"fmt"
 	"time"
+	"reflect"
 	"unsafe"
 
 	"github.com/fluent/fluent-bit-go/input"
@@ -24,8 +25,19 @@ func FLBPluginInit(plugin unsafe.Pointer) int {
 	return input.FLB_OK
 }
 
+func MakePayload(packed []byte) (**C.void, int) {
+	var payload **C.void
+
+	length := len(packed)
+	hdr := (*reflect.SliceHeader)(unsafe.Pointer(&payload))
+	hdr.Data = uintptr(unsafe.Pointer(&packed))
+	hdr.Len = length
+
+	return payload, length
+}
+
 //export FLBPluginInputCallback
-func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
+func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
 	now := time.Now()
 	flb_time := input.FLBTime{now}
 	message := map[string]string{"message": "dummy"}
@@ -39,8 +51,10 @@ func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 		return input.FLB_ERROR
 	}
 
-	*data = unsafe.Pointer(&packed[0])
-	*size = C.size_t(len(packed))
+	payload, length := MakePayload(packed)
+
+	*data = *payload
+	*size = C.size_t(length)
 	// For emitting interval adjustment.
 	time.Sleep(1000 * time.Millisecond)
 
