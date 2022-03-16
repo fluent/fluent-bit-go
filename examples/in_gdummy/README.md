@@ -51,17 +51,26 @@ The callback will send a raw buffer of msgpack data with it proper bytes length 
 ```go
 import "reflect" // Import reflect package.
 
-// Operate safe payload creation.
-func MakePayload(packed []byte) (**C.void, int) {
-	var payload **C.void
-
-	length := len(packed)
-	hdr := (*reflect.SliceHeader)(unsafe.Pointer(&payload))
-	hdr.Data = uintptr(unsafe.Pointer(&packed))
-	hdr.Len = length
-
-	return payload, length
+func alloc(size int) unsafe.Pointer {
+	return C.calloc(C.size_t(size), 1)
 }
+
+func makeSlice(p unsafe.Pointer, n int) *Slice {
+	data := &c_slice_t{p, n}
+
+	runtime.SetFinalizer(data, func(data *c_slice_t){
+		C.free(data.p)
+	})
+
+	s := &Slice{data: data}
+	h := (*reflect.SliceHeader)(unsafe.Pointer(&s.Data))
+	h.Data = uintptr(p)
+	h.Len = n
+	h.Cap = n
+
+	return s
+}
+
 //export FLBPluginInputCallback
 func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
 	now := time.Now()
@@ -74,9 +83,11 @@ func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
 	// Some encoding logs to msgpack payload stuffs.
 	// It needs to Wait for some period on Golang input plugin side, until the new records are emitted.
 
-	payload, length := MakePayload(packed)
-
-	*data = *payload
+	length := len(packed)
+	p := alloc(length)
+	s := makeSlice(p, length)
+	copy(s.Data, packed)
+	*data = unsafe.Pointer(&s.Data[0])
 	*size = C.size_t(len(packed))
 	return input.FLB_OK
 }
