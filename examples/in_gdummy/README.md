@@ -12,8 +12,15 @@ Every output plugin go through four callbacks associated to different phases:
 | Registration           | FLBPluginRegister()             |
 | Initialization         | FLBPluginInit()                 |
 | Input Callback         | FLBPluginInputCallback()        |
-| Input Cleanup Callback | FLBPluginInputCleanupCallback() |
 | Exit                   | FLBPluginExit()                 |
+
+And _Input Cleanup Callback_ is optional.
+
+This callback is called right after _Input Callback_.
+
+| Plugin Phase           | Callback                        |
+|------------------------|---------------------------------|
+| Input Cleanup Callback | FLBPluginInputCleanupCallback() |
 
 ## Plugin Registration
 
@@ -49,6 +56,8 @@ When Fluent Bit wants to collect logs from Golang input plugin, the input callba
 
 The callback will send a raw buffer of msgpack data with it proper bytes length into Fluent Bit core.
 
+`data` will collect the assigned pointer and this passing pointer should be allocated by C style allocation (C.calloc/C.malloc).
+
 ```go
 import "reflect" // Import reflect package.
 
@@ -69,7 +78,7 @@ func makeSlice(p unsafe.Pointer, n int) *Slice {
 }
 
 //export FLBPluginInputCallback
-func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
+func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 	now := time.Now()
 	// To handle nanosecond precision on Golang input plugin, you must wrap up time instances with input.FLBTime type.
 	flb_time := input.FLBTime{now}
@@ -92,20 +101,14 @@ func FLBPluginInputCallback(data **C.void, size *C.size_t) int {
 
 ### Input Cleanup Callback
 
-For cleaning up to be allocated resources, this callback will be triggered after _Input Callback_.
+For cleaning up some sort of allocated resources, this callback will be triggered after _Input Callback_.
 
-This callback is mainly used for deallocating heap memories which are allocated by `C.malloc` or `C.calloc`.
+This callback is mainly used for cleaning up resources not for the first argument of input callback.
 
 ```go
-import "sync"
-
-var barrior sync.Mutex
-
 //export FLBPluginInputCleanupCallback
 func FLBPluginInputCleanupCallback(data unsafe.Pointer) int {
-	barrior.Lock() // Guarding for deallocating region is needed for safety.
-	C.free(unsafe.Pointer(data))
-	barrior.Unlock()
+	// Some sort of cleaning up resources
 
 	return input.FLB_OK
 }

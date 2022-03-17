@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"time"
 	"reflect"
-	"sync"
 	"unsafe"
 
 	"github.com/fluent/fluent-bit-go/input"
@@ -23,8 +22,6 @@ type c_slice_t struct {
 	p unsafe.Pointer
 	n int
 }
-
-var barrior sync.Mutex
 
 //export FLBPluginRegister
 func FLBPluginRegister(def unsafe.Pointer) int {
@@ -86,10 +83,6 @@ func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 
 //export FLBPluginInputCleanupCallback
 func FLBPluginInputCleanupCallback(data unsafe.Pointer) int {
-	barrior.Lock()
-	C.free(unsafe.Pointer(data))
-	barrior.Unlock()
-
 	return input.FLB_OK
 }
 
