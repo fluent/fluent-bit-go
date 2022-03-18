@@ -56,27 +56,9 @@ When Fluent Bit wants to collect logs from Golang input plugin, the input callba
 
 The callback will send a raw buffer of msgpack data with it proper bytes length into Fluent Bit core.
 
-`data` will collect the assigned pointer and this passing pointer should be allocated by C style allocation (C.calloc/C.malloc).
+`data` will collect the assigned pointer and this passing pointer should be allocated by C style allocation (C.calloc/C.malloc) or C.CBytes that is using C style allocation internally.
 
 ```go
-import "reflect" // Import reflect package.
-
-func alloc(size int) unsafe.Pointer {
-	return C.calloc(C.size_t(size), 1)
-}
-
-func makeSlice(p unsafe.Pointer, n int) *Slice {
-	data := &c_slice_t{p, n}
-
-	s := &Slice{data: data}
-	h := (*reflect.SliceHeader)(unsafe.Pointer(&s.Data))
-	h.Data = uintptr(p)
-	h.Len = n
-	h.Cap = n
-
-	return s
-}
-
 //export FLBPluginInputCallback
 func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 	now := time.Now()
@@ -90,11 +72,11 @@ func FLBPluginInputCallback(data *unsafe.Pointer, size *C.size_t) int {
 	// It needs to Wait for some period on Golang input plugin side, until the new records are emitted.
 
 	length := len(packed)
-	p := alloc(length)
-	s := makeSlice(p, length)
-	copy(s.Data, packed)
-	*data = unsafe.Pointer(&s.Data[0])
-	*size = C.size_t(len(packed))
+	*data = C.CBytes(packed)
+	*size = C.size_t(length)
+	// For emitting interval adjustment.
+	time.Sleep(1000 * time.Millisecond)
+
 	return input.FLB_OK
 }
 ```
