@@ -11,8 +11,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # TODO: Login to ghcr.io
-
       - uses: actions/checkout@v3
 
       # Required by golangci-lint-action@v3
@@ -28,7 +26,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # TODO: Login to ghcr.io
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/checkout@v3
 
