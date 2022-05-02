@@ -32,15 +32,22 @@ func testPlugin(t *testing.T, pool *dockertest.Pool) {
 	t.Cleanup(func() { _ = f.Close() })
 	t.Cleanup(func() { _ = f.Truncate(0) })
 
-	err = pool.Client.BuildImage(dc.BuildImageOptions{
+	buildOpts := dc.BuildImageOptions{
 		Name:         "fluent-bit-go.localhost",
 		ContextDir:   filepath.Join(pwd, ".."),
 		Dockerfile:   "plugin/testdata/Dockerfile",
 		Platform:     "linux/amd64",
 		OutputStream: io.Discard,
+		ErrorStream:  io.Discard,
 		Pull:         true,
 		AuthConfigs:  *auths,
-	})
+	}
+
+	if testing.Verbose() {
+		buildOpts.ErrorStream = os.Stderr
+	}
+
+	err = pool.Client.BuildImage(buildOpts)
 	wantNoErr(t, err)
 
 	fbit, err := pool.Client.CreateContainer(dc.CreateContainerOptions{
