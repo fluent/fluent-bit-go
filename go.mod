@@ -1,4 +1,4 @@
-module github.com/calyptia/plugins
+module github.com/calyptia/plugin
 
 go 1.18
 

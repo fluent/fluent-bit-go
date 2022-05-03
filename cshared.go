@@ -15,8 +15,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/calyptia/plugins/input"
-	"github.com/calyptia/plugins/output"
+	"github.com/calyptia/plugin/input"
+	"github.com/calyptia/plugin/output"
 	"github.com/ugorji/go/codec"
 )
 

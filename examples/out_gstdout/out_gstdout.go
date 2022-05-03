@@ -6,7 +6,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/calyptia/plugins/output"
+	"github.com/calyptia/plugin/output"
 )
 
 //export FLBPluginRegister
