@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/fluent/fluent-bit-go/plugin"
+	"github.com/calyptia/plugin"
 )
 
 func init() {

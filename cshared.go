@@ -15,8 +15,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/fluent/fluent-bit-go/input"
-	"github.com/fluent/fluent-bit-go/output"
+	"github.com/calyptia/plugin/input"
+	"github.com/calyptia/plugin/output"
 	"github.com/ugorji/go/codec"
 )
 
