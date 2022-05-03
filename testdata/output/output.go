@@ -19,7 +19,7 @@ func (plug dummyPlugin) Init(ctx context.Context, conf plugin.ConfigLoader) erro
 	return nil
 }
 
-func (plug dummyPlugin) Flush(ctx context.Context, ch <-chan plugins.Message) error {
+func (plug dummyPlugin) Flush(ctx context.Context, ch <-chan plugin.Message) error {
 	f, err := os.Create("/fluent-bit/etc/output.txt")
 	if err != nil {
 		return fmt.Errorf("could not open output.txt: %w", err)
