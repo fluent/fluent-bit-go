@@ -16,7 +16,7 @@ type dummyPlugin struct {
 	foo string
 }
 
-func (plug *dummyPlugin) Init(ctx context.Context, conf plugins.ConfigLoader) error {
+func (plug *dummyPlugin) Init(ctx context.Context, conf plugin.ConfigLoader) error {
 	plug.foo = conf.String("foo")
 	return nil
 }
@@ -34,7 +34,7 @@ func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugin.Message) e
 
 			return nil
 		case <-tick.C:
-			ch <- plugins.Message{
+			ch <- plugin.Message{
 				Time: time.Now(),
 				Record: map[string]string{
 					"message": "hello from go-test-input-plugin",
