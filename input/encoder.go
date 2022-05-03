@@ -15,7 +15,6 @@
 //  limitations under the License.
 //
 
-
 package input
 
 import (
@@ -59,7 +58,8 @@ func NewEncoder() *FLBEncoder {
 	enc := new(FLBEncoder)
 	enc.handle = new(codec.MsgpackHandle)
 	enc.handle.WriteExt = true
-	enc.handle.SetBytesExt(reflect.TypeOf(FLBTime{}), 0, &FLBTime{})
+	// TODO: handle error.
+	_ = enc.handle.SetBytesExt(reflect.TypeOf(FLBTime{}), 0, &FLBTime{})
 
 	return enc
 }
