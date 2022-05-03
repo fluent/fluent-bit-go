@@ -36,7 +36,7 @@ func testPlugin(t *testing.T, pool *dockertest.Pool) {
 	buildOpts := dc.BuildImageOptions{
 		Name:         "fluent-bit-go.localhost",
 		ContextDir:   filepath.Join(pwd, ".."),
-		Dockerfile:   "plugin/testdata/Dockerfile",
+		Dockerfile:   filepath.Join(pwd, "./testdata/Dockerfile"),
 		Platform:     "linux/amd64",
 		OutputStream: io.Discard,
 		ErrorStream:  io.Discard,

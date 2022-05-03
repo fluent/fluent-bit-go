@@ -9,7 +9,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/fluent/fluent-bit-go/input"
+	"github.com/calyptia/plugin/input"
 )
 
 //export FLBPluginRegister
