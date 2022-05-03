@@ -15,7 +15,7 @@ func init() {
 
 type dummyPlugin struct{}
 
-func (plug dummyPlugin) Init(ctx context.Context, conf plugins.ConfigLoader) error {
+func (plug dummyPlugin) Init(ctx context.Context, conf plugin.ConfigLoader) error {
 	return nil
 }
 
