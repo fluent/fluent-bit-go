@@ -5,23 +5,23 @@ import (
 	"errors"
 	"time"
 
-	"github.com/calyptia/plugins/plugin"
+	"github.com/calyptia/plugins"
 )
 
 func init() {
-	plugin.RegisterInput("go-test-input-plugin", "Golang input plugin for testing", &dummyPlugin{})
+	plugins.RegisterInput("go-test-input-plugin", "Golang input plugin for testing", &dummyPlugin{})
 }
 
 type dummyPlugin struct {
 	foo string
 }
 
-func (plug *dummyPlugin) Init(ctx context.Context, conf plugin.ConfigLoader) error {
+func (plug *dummyPlugin) Init(ctx context.Context, conf plugins.ConfigLoader) error {
 	plug.foo = conf.String("foo")
 	return nil
 }
 
-func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugin.Message) error {
+func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugins.Message) error {
 	tick := time.NewTicker(time.Second)
 
 	for {
@@ -34,7 +34,7 @@ func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugin.Message) e
 
 			return nil
 		case <-tick.C:
-			ch <- plugin.Message{
+			ch <- plugins.Message{
 				Time: time.Now(),
 				Record: map[string]string{
 					"message": "hello from go-test-input-plugin",

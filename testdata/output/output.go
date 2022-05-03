@@ -6,20 +6,20 @@ import (
 	"os"
 	"time"
 
-	"github.com/calyptia/plugins/plugin"
+	"github.com/calyptia/plugins"
 )
 
 func init() {
-	plugin.RegisterOutput("go-test-output-plugin", "Golang output plugin for testing", dummyPlugin{})
+	plugins.RegisterOutput("go-test-output-plugin", "Golang output plugin for testing", dummyPlugin{})
 }
 
 type dummyPlugin struct{}
 
-func (plug dummyPlugin) Init(ctx context.Context, conf plugin.ConfigLoader) error {
+func (plug dummyPlugin) Init(ctx context.Context, conf plugins.ConfigLoader) error {
 	return nil
 }
 
-func (plug dummyPlugin) Flush(ctx context.Context, ch <-chan plugin.Message) error {
+func (plug dummyPlugin) Flush(ctx context.Context, ch <-chan plugins.Message) error {
 	f, err := os.Create("/fluent-bit/etc/output.txt")
 	if err != nil {
 		return fmt.Errorf("could not open output.txt: %w", err)
