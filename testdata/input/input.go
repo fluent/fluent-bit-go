@@ -5,11 +5,11 @@ import (
 	"errors"
 	"time"
 
-	"github.com/calyptia/plugins"
+	"github.com/calyptia/plugin"
 )
 
 func init() {
-	plugins.RegisterInput("go-test-input-plugin", "Golang input plugin for testing", &dummyPlugin{})
+	plugin.RegisterInput("go-test-input-plugin", "Golang input plugin for testing", &dummyPlugin{})
 }
 
 type dummyPlugin struct {
@@ -21,7 +21,7 @@ func (plug *dummyPlugin) Init(ctx context.Context, conf plugins.ConfigLoader) er
 	return nil
 }
 
-func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugins.Message) error {
+func (plug dummyPlugin) Collect(ctx context.Context, ch chan<- plugin.Message) error {
 	tick := time.NewTicker(time.Second)
 
 	for {

@@ -6,11 +6,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/calyptia/plugins"
+	"github.com/calyptia/plugin"
 )
 
 func init() {
-	plugins.RegisterOutput("go-test-output-plugin", "Golang output plugin for testing", dummyPlugin{})
+	plugin.RegisterOutput("go-test-output-plugin", "Golang output plugin for testing", dummyPlugin{})
 }
 
 type dummyPlugin struct{}
