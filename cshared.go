@@ -12,6 +12,7 @@ import (
 	"log"
 	"os"
 	"reflect"
+	"runtime"
 	"time"
 	"unsafe"
 
@@ -124,6 +125,10 @@ func FLBPluginInputCallback(data *unsafe.Pointer, csize *C.size_t) int {
 			fmt.Fprintf(os.Stderr, "run: %s\n", err)
 			return input.FLB_ERROR
 		}
+		// enforce a runtime gc, to prevent the thread finalizer on
+		// fluent-bit to kick in before any remaining data has not been GC'ed
+		// causing a sigsegv.
+		defer runtime.GC()
 	}
 
 	return input.FLB_OK

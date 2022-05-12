@@ -45,7 +45,7 @@ type ConfigLoader interface {
 
 type Message struct {
 	Time   time.Time
-	Record map[string]string
+	Record any
 	tag    *string
 }
 
