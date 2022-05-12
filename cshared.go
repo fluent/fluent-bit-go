@@ -257,17 +257,17 @@ func FLBPluginFlush(data unsafe.Pointer, clength C.int, ctag *C.char) int {
 func FLBPluginExit() int {
 	log.Printf("calling FLBPluginExit(): name=%q\n", theName)
 
+	if unregister != nil {
+		unregister()
+	}
+
 	if runCancel != nil {
 		runCancel()
 	}
 
-	// if unregister != nil {
-	// 	unregister()
-	// }
-
-	// if theChannel != nil {
-	// 	defer close(theChannel)
-	// }
+	if theChannel != nil {
+		defer close(theChannel)
+	}
 
 	return input.FLB_OK
 }
