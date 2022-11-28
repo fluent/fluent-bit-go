@@ -1,4 +1,4 @@
-module github.com/fluent/fluent-bit-go/examples/multiinstance
+module github.com/fluent/fluent-bit-go/examples/out_multiinstance
 
 go 1.14
 
