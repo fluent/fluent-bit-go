@@ -12,6 +12,7 @@ import (
 
 //export FLBPluginRegister
 func FLBPluginRegister(def unsafe.Pointer) int {
+	log.Printf("[multiinstance] Register called")
 	return output.FLBPluginRegister(def, "multiinstance", "Testing multiple instances.")
 }
 
@@ -78,7 +79,16 @@ func FLBPluginExit() int {
 
 //export FLBPluginExitCtx
 func FLBPluginExitCtx(ctx unsafe.Pointer) int {
+	// Type assert context back into the original type for the Go variable
+	id := output.FLBPluginGetContext(ctx).(string)
+	log.Printf("[multiinstance] Exit called for id: %s", id)
 	return output.FLB_OK
+}
+
+//export FLBPluginUnregister
+func FLBPluginUnregister(def unsafe.Pointer) {
+	log.Print("[multiinstance] Unregister called")
+	output.FLBPluginUnregister(def)
 }
 
 func main() {
