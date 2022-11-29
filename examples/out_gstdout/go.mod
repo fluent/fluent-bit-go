@@ -1,4 +1,4 @@
-module github.com/fluent/fluent-bit-go/examples/gstdout
+module github.com/fluent/fluent-bit-go/examples/out_gstdout
 
 go 1.14
 
