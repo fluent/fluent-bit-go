@@ -32,6 +32,55 @@ When creating a Fluent Bit Input plugin, the _input_ package can be used as foll
 import "github.com/fluent/fluent-bit-go/input"
 ```
 
+#### Config key constraint
+
+Some config keys are used/overwritten by Fluent Bit and can't be used by a custom plugin, they are:
+
+| Property                     | Input | Output |
+|------------------------------|-------|--------|
+| `alias`                        |   X   |   X    |
+| `host`                         |   X   |   X    |
+| `ipv6`                         |   X   |   X    |
+| `listen`                       |   X   |        |
+| `log_level`                    |   X   |   X    |
+| `log_suppress_interval`        |   X   |        |
+| `match`                        |   X   |        |
+| `match_regex`                  |   X   |        |
+| `mem_buf_limit`                |   X   |   X    |
+| `port`                         |   X   |   X    |
+| `retry_limit`                  |   X   |        |
+| `routable`                     |   X   |   X    |
+| `storage.pause_on_chunks_overlimit` | X |   X    |
+| `storage.total_limit_size`     |   X   |        |
+| `storage.type`                 |   X   |   X    |
+| `tag`                          |   X   |   X    |
+| `threaded`                     |   X   |   X    |
+| `tls`                          |   X   |   X    |
+| `tls.ca_file`                  |   X   |   X    |
+| `tls.ca_path`                  |   X   |   X    |
+| `tls.crt_file`                 |   X   |   X    |
+| `tls.debug`                    |   X   |   X    |
+| `tls.key_file`                 |   X   |   X    |
+| `tls.key_passwd`               |   X   |   X    |
+| `tls.verify`                   |   X   |   X    |
+| `tls.vhost`                    |   X   |   X    |
+| `workers`                      |   X   |        |
+
+This implies that if your plugin depends on property like `listen` you can use on output plugin but not on input plugin, `host` don't work on both, rather than this custom key like `address` work on both.
+
+```ini
+[OUTPUT]
+    Name   my_output_plugin
+    Listen something # work
+    Host # don't work
+    Address # work
+[INPUT]
+    Name   my_input_plugin
+    Listen something #don't work
+    Host localhost # don't work
+    Address # work
+```
+
 ## Contact
 
 Feel free to join us on our Slack channel, Mailing List, IRC or Twitter:
