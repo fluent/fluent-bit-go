@@ -82,7 +82,22 @@ func GetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]in
 		return -2, 0, nil
 	}
 
-	t := slice.Index(0).Interface()
+	var t interface{}
+	ts = slice.Index(0).Interface()
+	switch ty := ts.(type) {
+	case FLBTime:
+		t = ty
+	case uint64:
+		t = ty
+	case []interface{}: // for Fluent Bit V2 metadata type of format
+		s := reflect.ValueOf(ty)
+		if s.Kind() != reflect.Slice || s.Len() < 2 {
+			return -4, 0, nil
+		}
+		t = s.Index(0).Interface()
+	default:
+		return -5, 0, nil
+	}
 	data := slice.Index(1)
 
 	map_data, ok := data.Interface().(map[interface{}]interface{})
