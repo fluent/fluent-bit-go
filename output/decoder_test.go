@@ -19,10 +19,16 @@ package output
 
 import (
 	"encoding/binary"
+	"log"
+	"os"
 	"reflect"
 	"testing"
 	"time"
 	"unsafe"
+)
+
+const (
+	testDataFile = "./testdata/data"
 )
 
 // dummyRecord should be byte Array, not Slice to be able to Cast c array.
@@ -80,38 +86,56 @@ func TestGetRecord(t *testing.T) {
 }
 
 func TestGetV2Record(t *testing.T) {
-	dec := NewDecoder(unsafe.Pointer(&dummyV2Record), len(dummyV2Record))
-	if dec == nil {
-		t.Fatal("dec is nil")
+
+	anotherDummyV2RecordBytes, err := os.ReadFile(testDataFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+	anotherDummyV2Record := (*[39]byte)(anotherDummyV2RecordBytes)
+
+	t.Log(dummyV2Record)
+	t.Log(*anotherDummyV2Record)
+
+	dummyV2Records := [][39]byte{
+		dummyV2Record,
+		*anotherDummyV2Record,
 	}
 
-	ret, timestamp, record := GetRecord(dec)
-	if ret < 0 {
-		t.Fatalf("ret is negative: code %v", ret)
-	}
+	for i, record := range dummyV2Records {
 
-	// test timestamp
-	ts, ok := timestamp.(FLBTime)
-	if !ok {
-		t.Fatalf("cast error. Type is %s", reflect.TypeOf(timestamp))
-	}
+		dec := NewDecoder(unsafe.Pointer(&record), len(record))
+		if dec == nil {
+			t.Fatal("dec is nil, i", i)
+		}
 
-	// test
-	if ts.Time != extractTimeStamp() {
-		t.Fatalf("GetRecord timestamp extraction does not match manual extractTimeStamp")
-	}
+		ret, timestamp, record := GetRecord(dec)
+		if ret < 0 {
+			t.Fatalf("ret is negative: code %v", ret)
+		}
 
-	if ts.Unix() != int64(0x64be0eeb) {
-		t.Errorf("ts.Unix() error. given %d", ts.Unix())
-	}
+		// test timestamp
+		ts, ok := timestamp.(FLBTime)
+		if !ok {
+			t.Fatalf("cast error. Type is %s", reflect.TypeOf(timestamp))
+		}
 
-	// test record
-	v, ok := record["schema"].(int64)
-	if !ok {
-		t.Fatalf("cast error. Type is %s", reflect.TypeOf(record["schema"]))
-	}
-	if v != 1 {
-		t.Errorf(`record["schema"] is not 1 %d`, v)
+		// test
+		if ts.Time != extractTimeStamp() {
+			t.Fatalf("GetRecord timestamp extraction does not match manual extractTimeStamp")
+		}
+
+		if ts.Unix() != int64(0x64be0eeb) {
+			t.Errorf("ts.Unix() error. given %d", ts.Unix())
+		}
+
+		// test record
+		v, ok := record["schema"].(int64)
+		if !ok {
+			t.Fatalf("cast error. Type is %s", reflect.TypeOf(record["schema"]))
+		}
+		if v != 1 {
+			t.Errorf(`record["schema"] is not 1 %d`, v)
+		}
 	}
 }
 
