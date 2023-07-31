@@ -69,11 +69,11 @@ func NewDecoder(data unsafe.Pointer, length int) *FLBDecoder {
 }
 
 func GetRecord(dec *FLBDecoder) (ret int, ts interface{}, rec map[interface{}]interface{}) {
-	var check error
+
 	var m interface{}
 
-	check = dec.mpdec.Decode(&m)
-	if check != nil {
+	err := dec.mpdec.Decode(&m)
+	if err != nil {
 		return -1, 0, nil
 	}
 
