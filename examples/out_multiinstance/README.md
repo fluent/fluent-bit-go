@@ -22,7 +22,7 @@ description:
 ```go
 //export FLBPluginRegister
 func FLBPluginRegister(def unsafe.Pointer) int {
-	return output.FLBPluginRegister(ctx, "multiinstance", "Testing multiple instances")
+	return output.FLBPluginRegister(def, "multiinstance", "Testing multiple instances")
 }
 ```
 
