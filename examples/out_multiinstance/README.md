@@ -94,7 +94,7 @@ func FLBPluginExitCtx(ctx unsafe.Pointer) int {
 Build the docker image locally to see how it works.
 
 ```bash
-$ docker build . -t fluent-bit-multiinstance -f examples/out_multiinstance/Dockerfile
+$ docker build . -t fluent-bit-multiinstance -f Dockerfile
 $ docker run -it --rm fluent-bit-multiinstance
 ```
 
