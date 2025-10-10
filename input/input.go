@@ -52,6 +52,7 @@ func FLBPluginRegister(def unsafe.Pointer, name, desc string) int {
 	p.flags = 0
 	p.name = C.CString(name)
 	p.description = C.CString(desc)
+	p.event_type = 0
 	return 0
 }
 
