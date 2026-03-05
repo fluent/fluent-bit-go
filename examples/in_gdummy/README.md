@@ -7,20 +7,13 @@ specified instance configuration to the input callback.
 
 Every output plugin go through four callbacks associated to different phases:
 
-| Plugin Phase           | Callback                        |
-|------------------------|---------------------------------|
-| Registration           | FLBPluginRegister()             |
-| Initialization         | FLBPluginInit()                 |
-| Input Callback         | FLBPluginInputCallback()        |
-| Exit                   | FLBPluginExit()                 |
-
-And _Input Cleanup Callback_ is optional.
-
-This callback is called right after _Input Callback_.
-
-| Plugin Phase           | Callback                        |
-|------------------------|---------------------------------|
-| Input Cleanup Callback | FLBPluginInputCleanupCallback() |
+| Plugin Phase           | Necessity | Callback                        |
+|------------------------|-----------|---------------------------------|
+| Registration           | Mandatory | FLBPluginRegister()             |
+| Initialization         | Mandatory | FLBPluginInit()                 |
+| Input Callback         | Mandatory | FLBPluginInputCallback()        |
+| Input Cleanup Callback | Optional  | FLBPluginInputCleanupCallback() |
+| Exit                   | Mandatory | FLBPluginExit()                 |
 
 ## Plugin Registration
 
