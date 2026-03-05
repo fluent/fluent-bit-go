@@ -29,6 +29,18 @@ func FLBPluginRegister(def unsafe.Pointer) int {
 This function is invoked at start time _before_ any configuration is done
 inside the engine.
 
+### Setting event type 
+
+By default, Fluent Bit Golang plugins process logs. Optionally, the event_type 
+can be set to allow for metrics by using `output.FLBPluginRegisterWithEventType`. 
+
+```go
+//export FLBPluginRegister 
+func FLBPluginRegister(def unsafe.Pointer) int {
+	return output.FLBPluginRegisterWithEventType(ctx, output.FLB_OUTPUT_METRICS, "multiinstance", "Testing multiple instances")
+}
+```
+
 ## Plugin Initialization
 
 Before the engine starts, it initializes all plugins that were configured.
