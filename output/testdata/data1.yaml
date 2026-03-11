@@ -1,0 +1,4201 @@
+---
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155bae23"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef260c49c"
+            value: 1690581961.512
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3031202d30303030"
+            value: "28/Jul/2023:22:06:01 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333833"
+            value: "75383"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313632"
+            value: "74162"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313632"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74162"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5e83"
+            value: 24195
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010733"
+            value: 67379
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155bc9bf"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef2678d50"
+            value: 1690581961.618
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3031202d30303030"
+            value: "28/Jul/2023:22:06:01 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333834"
+            value: "75384"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313633"
+            value: "74163"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313633"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74163"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5e8f"
+            value: 24207
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010733"
+            value: 67379
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155bd05f"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef26e45a2"
+            value: 1690581961.723
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3031202d30303030"
+            value: "28/Jul/2023:22:06:01 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333835"
+            value: "75385"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313634"
+            value: "74164"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313634"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74164"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5e9d"
+            value: 24221
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010733"
+            value: 67379
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155bd5d1"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef2750e56"
+            value: 1690581961.829
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3031202d30303030"
+            value: "28/Jul/2023:22:06:01 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333836"
+            value: "75386"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313635"
+            value: "74165"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313635"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74165"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5ead"
+            value: 24237
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010733"
+            value: 67379
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155bdef3"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef27bc6a8"
+            value: 1690581961.934
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3031202d30303030"
+            value: "28/Jul/2023:22:06:01 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333837"
+            value: "75387"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313636"
+            value: "74166"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313636"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74166"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5eb9"
+            value: 24249
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010733"
+            value: 67379
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155be3e3"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef2828f5c"
+            value: 1690581962.04
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3032202d30303030"
+            value: "28/Jul/2023:22:06:02 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333838"
+            value: "75388"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313637"
+            value: "74167"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313637"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74167"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5ec1"
+            value: 24257
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010734"
+            value: 67380
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155be8ce"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef2895810"
+            value: 1690581962.146
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3032202d30303030"
+            value: "28/Jul/2023:22:06:02 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333839"
+            value: "75389"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313638"
+            value: "74168"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313638"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74168"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5ecd"
+            value: 24269
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010734"
+            value: 67380
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
+- format: "array32"
+  header: "0xdd"
+  length: 2
+  children:
+    - format: "array32"
+      header: "0xdd"
+      length: 2
+      children:
+        - format: "fixext8"
+          header: "0xd7"
+          exttype: 0
+          length: 8
+          data: "0x64c43bca155c1da3"
+        - format: "fixmap"
+          header: "0x80"
+          length: 0
+          children: []
+    - format: "map16"
+      header: "0xde"
+      length: 43
+      children:
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717471"
+            value: "cqtq"
+          value:
+            format: "float64"
+            header: "0xcb"
+            data: "0x41d9310ef29020c5"
+            value: 1690581962.252
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717474"
+            value: "cqtt"
+          value:
+            format: "fixint"
+            header: "0x16"
+            data: "0x16"
+            value: 22
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371746e"
+            value: "cqtn"
+          value:
+            format: "fixstr"
+            header: "0xba"
+            length: 26
+            data: "0x32382f4a756c2f323032333a32323a30363a3032202d30303030"
+            value: "28/Jul/2023:22:06:02 -0000"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746662"
+            value: "ttfb"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x74746d73"
+            value: "ttms"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637263"
+            value: "crc"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x5443505f4d454d5f484954"
+            value: "TCP_MEM_HIT"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63727363"
+            value: "crsc"
+          value:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x4e4f4e45"
+            value: "NONE"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x63686d"
+            value: "chm"
+          value:
+            format: "fixstr"
+            header: "0xa7"
+            length: 7
+            data: "0x4849545f52414d"
+            value: "HIT_RAM"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636373"
+            value: "cccs"
+          value:
+            format: "fixint"
+            header: "0x00"
+            data: "0x00"
+            value: 0
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63636964"
+            value: "ccid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3735333930"
+            value: "75390"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746964"
+            value: "ctid"
+          value:
+            format: "fixint"
+            header: "0x01"
+            data: "0x01"
+            value: 1
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70736374"
+            value: "psct"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x62696e6172792f6f637465742d73747265616d"
+            value: "binary/octet-stream"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726563"
+            value: "crec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63746563"
+            value: "ctec"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371686d"
+            value: "cqhm"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x474554"
+            value: "GET"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63726964"
+            value: "crid"
+          value:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x3734313639"
+            value: "74169"
+        - key:
+            format: "fixstr"
+            header: "0xa6"
+            length: 6
+            data: "0x637275756964"
+            value: "cruuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 42
+            data: "0x63393362376165322d343361382d346466632d383031612d3266653531343366613762622d3734313639"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb-74169"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x7075756964"
+            value: "puuid"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 36
+            data: "0x63393362376165322d343361382d346466632d383031612d326665353134336661376262"
+            value: "c93b7ae2-43a8-4dfc-801a-2fe5143fa7bb"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x6371716c"
+            value: "cqql"
+          value:
+            format: "uint8"
+            header: "0xcc"
+            data: "0xe4"
+            value: 228
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073636c"
+            value: "pscl"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x0631"
+            value: 1585
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x7073716c"
+            value: "psql"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x09e8"
+            value: 2536
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636869"
+            value: "chi"
+          value:
+            format: "fixstr"
+            header: "0xa9"
+            length: 9
+            data: "0x31302e39392e302e31"
+            value: "10.99.0.1"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636870"
+            value: "chp"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x5ecf"
+            value: 24271
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706870"
+            value: "php"
+          value:
+            format: "uint16"
+            header: "0xcd"
+            data: "0x1f91"
+            value: 8081
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717076"
+            value: "cqpv"
+          value:
+            format: "fixstr"
+            header: "0xa8"
+            length: 8
+            data: "0x687474702f312e31"
+            value: "http/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717478"
+            value: "cqtx"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 159
+            data: "0x4745542068747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d706420485454502f312e31"
+            value: "GET https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd HTTP/1.1"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x637173736c"
+            value: "cqssl"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737372"
+            value: "cqssr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737376"
+            value: "cqssv"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371737363"
+            value: "cqssc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63667363"
+            value: "cfsc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x46494e"
+            value: "FIN"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x70737363"
+            value: "pssc"
+          value:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x323030"
+            value: "200"
+        - key:
+            format: "fixstr"
+            header: "0xa4"
+            length: 4
+            data: "0x63717472"
+            value: "cqtr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x30"
+            value: "0"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x637175"
+            value: "cqu"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 146
+            data: "0x68747470733a2f2f73772e63646e2e6465762e736964656e2e696f2f632f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "https://sw.cdn.dev.siden.io/c/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757563"
+            value: "cquuc"
+          value:
+            format: "str8"
+            header: "0xd9"
+            length: 138
+            data: "0x687474703a2f2f6c6f63616c686f73743a383038302f736964656e2d6f726967696e2d303030312f6331303030303030302f434f4e54454e542d4645454445522d5343524950542f636f6e74656e74732f4269675f4275636b5f42756e6e792f367365632f4269674275636b42756e6e795f36735f73696d706c655f323031345f30355f30392e6d7064"
+            value: "http://localhost:8080/siden-origin-0001/c10000000/CONTENT-FEEDER-SCRIPT/contents/Big_Buck_Bunny/6sec/BigBuckBunny_6s_simple_2014_05_09.mpd"
+        - key:
+            format: "fixstr"
+            header: "0xa5"
+            length: 5
+            data: "0x6371757568"
+            value: "cquuh"
+          value:
+            format: "fixstr"
+            header: "0xae"
+            length: 14
+            data: "0x6c6f63616c686f73743a38303830"
+            value: "localhost:8080"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7561"
+            value: "ua"
+          value:
+            format: "fixstr"
+            header: "0xab"
+            length: 11
+            data: "0x6375726c2f372e38312e30"
+            value: "curl/7.81.0"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6368"
+            value: "ch"
+          value:
+            format: "fixstr"
+            header: "0xb3"
+            length: 19
+            data: "0x73772e63646e2e6465762e736964656e2e696f"
+            value: "sw.cdn.dev.siden.io"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6372"
+            value: "cr"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x636363"
+            value: "ccc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa3"
+            length: 3
+            data: "0x706363"
+            value: "pcc"
+          value:
+            format: "fixstr"
+            header: "0xa1"
+            length: 1
+            data: "0x2d"
+            value: "-"
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x7061"
+            value: "pa"
+          value:
+            format: "uint32"
+            header: "0xce"
+            data: "0x00010734"
+            value: 67380
+        - key:
+            format: "fixstr"
+            header: "0xa2"
+            length: 2
+            data: "0x6c6d"
+            value: "lm"
+          value:
+            format: "fixstr"
+            header: "0xbd"
+            length: 29
+            data: "0x5765642c203134204a756e20323032332031373a34343a343220474d54"
+            value: "Wed, 14 Jun 2023 17:44:42 GMT"
