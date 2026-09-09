@@ -50,10 +50,12 @@ func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int 
 		var timestamp time.Time
 		switch t := ts.(type) {
 		case output.FLBTime:
-			timestamp = ts.(output.FLBTime).Time
+			timestamp = t.Time
 		case uint64:
 			timestamp = time.Unix(int64(t), 0)
 		default:
+			// the fluent-bit V2 timestamp layout: []interface{output.FLBTime, map} .
+			// if use old fluent-bit-go version, it cause invalid format error.
 			fmt.Println("time provided invalid, defaulting to now.")
 			timestamp = time.Now()
 		}
@@ -68,6 +70,11 @@ func FLBPluginFlushCtx(ctx, data unsafe.Pointer, length C.int, tag *C.char) int 
 		count++
 	}
 
+	// Return options:
+	//
+	// output.FLB_OK    = data have been processed.
+	// output.FLB_ERROR = unrecoverable error, do not try this again.
+	// output.FLB_RETRY = retry to flush later.
 	return output.FLB_OK
 }
 
