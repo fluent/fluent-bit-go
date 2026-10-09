@@ -20,6 +20,11 @@
 #ifndef FLBGO_INPUT_H
 #define FLBGO_INPUT_H
 
+/* Event types. They match include/fluent-bit/flb_input_event.h in fluent-bit source code. */
+#define FLB_INPUT_LOGS     0
+#define FLB_INPUT_METRICS  1
+#define FLB_INPUT_TRACES   2
+
 struct flb_api {
     char *_;
     char *(*input_get_property) (char *, void *);
