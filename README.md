@@ -32,6 +32,37 @@ When creating a Fluent Bit Input plugin, the _input_ package can be used as foll
 import "github.com/fluent/fluent-bit-go/input"
 ```
 
+#### Emitting metrics or traces
+
+By default, input plugins emit logs. To emit metrics or traces instead, register
+the plugin with `input.WithEventType(input.FLB_INPUT_METRICS)` or
+`input.WithEventType(input.FLB_INPUT_TRACES)`. The bytes returned from
+`FLBPluginInputCallback` must then be a msgpack-encoded [cmetrics][cmetrics]
+(resp. [ctraces][ctraces]) context instead of `[timestamp, record]` log entries,
+i.e. the format produced by `cmt_encode_msgpack_create()` (resp.
+`ctr_encode_msgpack_create()`).
+
+```go
+func FLBPluginRegister(def unsafe.Pointer) int {
+    return input.FLBPluginRegisterWithOptions(def,
+        input.WithName("my_metrics_input"),
+        input.WithDescription("My metrics input plugin"),
+        input.WithEventType(input.FLB_INPUT_METRICS),
+    )
+}
+```
+
+The input event type constants (`FLB_INPUT_LOGS`, `FLB_INPUT_METRICS`,
+`FLB_INPUT_TRACES`) have different values from the output ones
+(`FLB_OUTPUT_LOGS`, `FLB_OUTPUT_METRICS`, `FLB_OUTPUT_TRACES`); always use the
+constants from the package of the plugin type you are registering.
+
+> **Requires a Fluent Bit version that includes [fluent/fluent-bit#11915][input-event-type-pr].**
+> On earlier versions the event type is ignored: the payload is parsed as log
+> records, so a metrics or traces payload is silently dropped.
+
+For a complete example please refer to the [in\_gmetrics plugin][in-gmetrics].
+
 ### Typed configuration
 
 Both the _output_ and _input_ packages allow a plugin to declare a typed
@@ -139,6 +170,10 @@ other [contributors][contributors].
 [fluent-bit-1-4]: https://github.com/fluent/fluent-bit/tree/v1.4.0
 [fluent-bit-1-9]: https://github.com/fluent/fluent-bit/tree/1.9
 [config-map-pr]: https://github.com/fluent/fluent-bit/pull/12058
+[input-event-type-pr]: https://github.com/fluent/fluent-bit/pull/11915
+[in-gmetrics]: https://github.com/fluent/fluent-bit-go/tree/master/examples/in_gmetrics
+[cmetrics]: https://github.com/fluent/cmetrics
+[ctraces]: https://github.com/fluent/ctraces
 [multiinstance]: https://github.com/fluent/fluent-bit-go/tree/fc386d263885e50387dd0081a77adf4072e8e4b6/examples/out_multiinstance
 [fluent-bit-go]: http://github.com/fluent/fluent-bit-go
 [treasure-data]: http://treasuredata.com
