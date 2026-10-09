@@ -28,6 +28,8 @@ func FLBPluginRegister(def unsafe.Pointer) int {
 }
 ```
 
+To emit metrics or traces instead of logs, see the [in_gmetrics](../in_gmetrics) example.
+
 ## Plugin Initialization
 
 Before the engine starts, it initialize all plugins that were requested to start.
