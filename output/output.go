@@ -163,7 +163,11 @@ func setConfigMap(p *FLBPluginProxyDef, cmap []ConfigMap) {
 		entries[i]._type = C.int(m.Type)
 		entries[i].name = C.CString(m.Name)
 		entries[i].flags = C.int(m.Flags)
-		entries[i].def_value = C.CString(m.DefValue)
+		// Leave def_value NULL when no default is given. Fluent Bit treats any
+		// non-NULL value as a default and validates it against the property type.
+		if m.DefValue != "" {
+			entries[i].def_value = C.CString(m.DefValue)
+		}
 		entries[i].desc = C.CString(m.Desc)
 	}
 
